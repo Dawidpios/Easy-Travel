@@ -8,9 +8,10 @@ import Footer from "./Footer"
 
 import styles from "../styles/componentsStyle/App.module.css"
 
-function App() {
+const App = () => {
+
 	return (
-		<div className={styles.App}>
+		
       <AppProvider>
 			<Router>
 				<NavBar></NavBar>
@@ -18,8 +19,9 @@ function App() {
 				<Footer></Footer>
 			</Router>
       </AppProvider>
-		</div>
+		
 	)
 }
 
 export default App
+
