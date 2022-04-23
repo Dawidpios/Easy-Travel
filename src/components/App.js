@@ -1,5 +1,6 @@
 import React from "react"
-import { BrowserRouter as Router } from "react-router-dom"
+// import { BrowserRouter as Router } from "react-router-dom"
+import { BrowserRouter } from "react-router-dom"
 import AppProvider from "../context/AppContext";
 
 import NavBar from "./NavBar"
@@ -13,11 +14,11 @@ const App = () => {
 	return (
 		
       <AppProvider>
-			<Router>
+			<BrowserRouter>
 				<NavBar></NavBar>
 				<Main></Main>
 				<Footer></Footer>
-			</Router>
+			</BrowserRouter>
       </AppProvider>
 		
 	)

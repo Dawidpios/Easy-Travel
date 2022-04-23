@@ -1,0 +1,34 @@
+.nav{
+    width:100%;
+    position:sticky;
+    margin-bottom: 2rem;
+    
+
+}
+
+.nav__ul{
+    width:80%;
+    position: relative;
+    left:20%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    list-style: none;
+
+}
+
+.nav__ul__li{
+    text-align: center;
+    font-size: 1.5rem;
+    text-decoration: none;
+   
+}
+
+.nav__ul__li a{
+    
+    text-decoration: none;
+   
+}
+
+

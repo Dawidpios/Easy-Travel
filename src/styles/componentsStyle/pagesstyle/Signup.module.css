@@ -1,0 +1,34 @@
+.form__container{
+    width:50%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    margin-left: auto;
+    margin-right: auto;
+
+
+}
+
+.form__labels{
+width:30%;
+font-size:1.4rem;
+margin:.8rem;
+text-align: center;
+}
+
+.form__inputs{
+width:30%;
+font-size:1.5rem;
+margin:1rem;
+}
+
+.form__button{
+
+}
+
+.invalidValue{
+    border: 1px solid red;
+}
