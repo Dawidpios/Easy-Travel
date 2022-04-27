@@ -15,6 +15,12 @@ const Main = () => {
 	const date = localStorage.getItem("registeredUsers")
 	return date ? JSON.parse(date) : []
 })
+
+	useEffect(()=>{
+		fetch("https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=55.42159&longitude=-22.0837&localityLanguage=pl")
+		.then(response=>response.json())
+		.then(response=>console.log(response))
+	},[])
 	
 	useEffect(()=>{
 		localStorage.setItem("registeredUsers", JSON.stringify(users))

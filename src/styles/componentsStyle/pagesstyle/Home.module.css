@@ -1,0 +1,30 @@
+.logoContainer{
+    width:100%;
+    display:flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    background-image:url("../../../images/logo.svg");
+    background-size: cover;
+    height: 73rem;
+}
+
+.logo__H1{
+font-size:4.4rem;
+color:#EAB04F;
+}
+
+.logo__input{
+    width:calc(100% - 68rem);
+    margin:1rem 0rem 6rem 0rem;
+    height:4.8rem;
+    font-size:1.6rem;
+    color:#00B6C9;
+    padding:1.8rem;
+   
+}
+
+.logo__input::placeholder{
+    color:#00B6C9;
+}
+
