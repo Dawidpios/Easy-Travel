@@ -2,7 +2,7 @@
     width:100%;
     display:flex;
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: space-around;
     align-items: center;
     background-image:url("../../../images/logo.svg");
     background-size: cover;
@@ -12,6 +12,7 @@
 .logo__H1{
 font-size:4.4rem;
 color:#EAB04F;
+font-family: 'Cinzel', serif;
 }
 
 .logo__input{
@@ -26,5 +27,76 @@ color:#EAB04F;
 
 .logo__input::placeholder{
     color:#00B6C9;
+    font-family: "Poppins";
 }
 
+
+
+
+
+
+
+.aboutSite__container{
+    width:calc(100% - 27rem);
+    margin-left:auto;
+    margin-right:auto;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.aboutSite__header{
+    margin-top:10rem;
+    font-size:3.6rem;
+    font-family: "Poppins";
+    line-height: 4rem;
+    font-weight: 600;
+
+}
+
+.aboutSite__header__paragraph{
+display: inline-block;
+font-family: "Poppins";
+font-size:3.6rem;
+color:#EAB04F;
+}
+
+.aboutSite__column__container{
+    width:100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+.aboutSite__column{
+    flex-basis: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.aboutSite__column__image{
+    margin-top:6rem;
+    margin-bottom: 2.4rem;
+
+}
+
+.aboutSite__column__header{
+    margin-top:2.4rem;
+    margin-bottom: 1.8rem;
+    font-size:1.8rem;
+    font-family: "Poppins";
+}
+
+.aboutSite__column__paragraph{
+    margin-top:1.8rem;
+    font-size:1.8rem;
+    font-family: "Poppins";
+    text-align: justify;
+}

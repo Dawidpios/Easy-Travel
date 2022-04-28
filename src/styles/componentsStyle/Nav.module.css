@@ -29,6 +29,7 @@
 }
 
 .nav__ul__li{
+    font-family: 'Poppins', sans-serif;
     color:black;
     text-align: center;
     font-size: 1.5rem;
@@ -42,12 +43,15 @@
     text-align: center;
     border-radius: .3rem;
     background-color: #00BED4;
+    
 }
 .nav__ul__li__login a{
+    font-family: 'Poppins', sans-serif;
     color:white;
 }
 
 .nav__ul__li a{
+    
     font-size:1.8rem;
     text-decoration: none;
    
