@@ -78,6 +78,7 @@ color:#EAB04F;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin:2rem;
 
 }
 
@@ -92,6 +93,7 @@ color:#EAB04F;
     margin-bottom: 1.8rem;
     font-size:1.8rem;
     font-family: "Poppins";
+    text-align: center;
 }
 
 .aboutSite__column__paragraph{
@@ -99,4 +101,32 @@ color:#EAB04F;
     font-size:1.8rem;
     font-family: "Poppins";
     text-align: justify;
+}
+
+
+
+.ourService__container{
+
+}
+
+
+.ourService__container__header{
+
+}
+
+.ourService__column__container{
+
+}
+.ourService__column{
+
+}
+
+.ourService__column__image{
+
+}
+.ourService__column__header{
+
+}
+.ourService__column__paragraph{
+    
 }

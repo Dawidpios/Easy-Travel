@@ -56,37 +56,37 @@ const Home = () => {
 				</div>
 			</section>
 
-			<section>
-				<h2>Our Top Services</h2>
-				<div>
-					<div>
-						<img alt="service icon"></img>
-						<h4>Plane</h4>
-						<p>
+			<section className={style.ourService__container}>
+				<h2 className={style.ourService__container__header}>Our Top Services</h2>
+				<div className={style.ourService__column__container}>
+					<div className={style.ourService__column}>
+						<img alt="service icon" className={style.ourService__column__image}></img>
+						<h4 className={style.ourService__column__header}>Plane</h4>
+						<p className={style.ourService__column__paragraph}>
 							At eripuit signiferumque sea, vel ad mucius molestie, cu
 							labitur.
 						</p>
 					</div>
 					<div>
-						<img alt="service icon"></img>
-						<h4>Train</h4>
-						<p>
+						<img alt="service icon" className={style.ourService__column__image}></img>
+						<h4 className={style.ourService__column__header}>Train</h4>
+						<p className={style.ourService__column__paragraph}>
 							At eripuit signiferumque sea, vel ad mucius molestie, cu
 							labitur.
 						</p>
 					</div>
 					<div>
-						<img alt="service icon"></img>
-						<h4>Taxi</h4>
-						<p>
+						<img alt="service icon" className={style.ourService__column__image}></img>
+						<h4 className={style.ourService__column__header}>Taxi</h4>
+						<p className={style.ourService__column__paragraph}>
 							At eripuit signiferumque sea, vel ad mucius molestie, cu
 							labitur.
 						</p>
 					</div>
 					<div>
-						<img alt="service icon"></img>
-						<h4>Bus</h4>
-						<p>
+						<img alt="service icon" className={style.ourService__column__image}></img>
+						<h4 className={style.ourService__column__header}>Bus</h4>
+						<p className={style.ourService__column__paragraph}>
 							At eripuit signiferumque sea, vel ad mucius molestie, cu
 							labitur.
 						</p>

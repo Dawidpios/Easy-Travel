@@ -26,7 +26,7 @@ const NavBar = () => {
             <Link className={styles.nav__ul__li} to="/signup">Sign Up</Link>
         </li>
         <li className={styles.nav__ul__li__login}>
-            <Link className={styles.nav__ul__li} to="/signup">Log In</Link>
+            <Link className={styles.nav__ul__li} to="/login">Log In</Link>
         </li>
         </ul>
     </div>
