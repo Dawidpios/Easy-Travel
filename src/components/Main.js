@@ -5,8 +5,9 @@ import Home from "../pages/Home"
 import TransportOffer from "../pages/TransportOffer"
 import Booking from "../pages/Booking"
 import ExchangeOffice from "../pages/ExchangeOffice"
-import RegisterForm from "../pages/RegisterForm/RegisterForm"
-import SignUp from "../pages/SignUp/SignUp"
+import SignUp from "./SignUp/SignUp"
+import SignIn from "./SignIn/SignIn"
+import User from "./User/User"
 
 import styles from "../styles/componentsStyle/main.module.css"
 
@@ -50,8 +51,9 @@ const Main = () => {
 			<Route path="offer" element={<TransportOffer />} />
 			<Route path="booking" element={<Booking />} />
 			<Route path="exchange" element={<ExchangeOffice />} />
-			<Route path="signup" element={<RegisterForm setUsers={setUsers} />} />
-			<Route path="login" element={<SignUp setUsers={setUsers} />} />
+			<Route path="signup" element={<SignUp setUsers={setUsers} />} />
+			<Route path="login" element={<SignIn setUsers={setUsers} />} />
+			<Route path="userProfile" element={<User setUsers={setUsers} />} />
 		</Routes>
 		</section>
 	)

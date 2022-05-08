@@ -2,12 +2,13 @@ import React, { useState } from "react"
 
 import styles from "../../styles/componentsStyle/pagesstyle/Signup.module.css"
 
-import { supabase } from "../../components/supaBaseClient/supaBaseClient"
+import { supabase } from "../supaBaseClient/supaBaseClient"
 
 const emailRegEx = /\S+@\S+\.\S+/
 const phoneRegEx = /^\d{9}$/
 
-const RegisterForm = () => {
+const SignUp = () => {
+
 	
 	const [validationMessage, setValidationMessage] = useState("")
 
@@ -141,4 +142,4 @@ const RegisterForm = () => {
 	)
 }
 
-export default RegisterForm
+export default SignUp

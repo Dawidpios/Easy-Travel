@@ -1,8 +1,20 @@
 import React, { useState } from "react"
-import { supabase } from "../../components/supaBaseClient/supaBaseClient"
-
+import { supabase } from "../supaBaseClient/supaBaseClient"
+import { useDispatch } from "react-redux"
+import { useSelector } from "react-redux"
+import { LOG_IN } from "../redux/appActions"
+import { Link } from "react-router-dom"
 import style from "../../styles/componentsStyle/LogIn.module.css"
-const SignUp = () => {
+
+
+
+
+const SignIn = () => {
+
+	
+	
+	const dispatch = useDispatch()
+
 	const [login, setLogin] = useState("")
 	const [password, setPassword] = useState("")
 
@@ -24,10 +36,14 @@ const SignUp = () => {
 			.from("USERS")
 			.select("*")
 			.eq("id", user.id)
-		console.log(user)
-		console.log(profiles)
-		console.log(error)
+		
+		
+		dispatch({type:LOG_IN, payload : profiles})
+		
+		
 	}
+
+
 	return (
 		<>
 			<form className={style.form}>
@@ -35,10 +51,10 @@ const SignUp = () => {
 				<input type="text" onChange={handleLogin} value={login}></input>
 				<label>Hasło</label>
 				<input type="text" onChange={handlePassword} value={password}></input>
-				<button onClick={handleLogIn}>Zaloguj</button>
+				<button onClick={handleLogIn}><Link to="/">Zaloguj</Link></button>
 			</form>
 		</>
 	)
 }
 
-export default SignUp
+export default SignIn
