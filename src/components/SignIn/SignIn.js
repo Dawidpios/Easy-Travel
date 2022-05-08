@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import { supabase } from "../supaBaseClient/supaBaseClient"
 import { useDispatch } from "react-redux"
 import { useSelector } from "react-redux"
-import { LOG_IN } from "../redux/appActions"
+import { LOG_IN } from "../../redux/appActions"
 import { Link } from "react-router-dom"
 import style from "../../styles/componentsStyle/LogIn.module.css"
 
