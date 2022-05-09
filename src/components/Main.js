@@ -17,7 +17,7 @@ const Main = () => {
 			'https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=55.42159&longitude=-22.0837&localityLanguage=pl'
 		)
 			.then((response) => response.json())
-			.then((response) => console.log(response))
+			
 	}, [])
 
 	return (

@@ -6,7 +6,7 @@ const User = () => {
 	return (
 		<>
 			<section className={style.UserProfile__Container}>
-			
+				<p> ceceec</p>
 				<UserPlayground></UserPlayground>
 			</section>
 		</>
