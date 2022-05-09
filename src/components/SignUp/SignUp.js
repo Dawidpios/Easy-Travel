@@ -1,21 +1,19 @@
-import React, { useState } from "react"
+import React, { useState } from 'react'
 
-import styles from "../../styles/componentsStyle/pagesstyle/Signup.module.css"
+import styles from '../../styles/componentsStyle/pagesstyle/Signup.module.css'
 
-import { supabase } from "../supaBaseClient/supaBaseClient"
+import { supabase } from '../supaBaseClient/supaBaseClient'
 
 const emailRegEx = /\S+@\S+\.\S+/
 const phoneRegEx = /^\d{9}$/
 
 const SignUp = () => {
+	const [validationMessage, setValidationMessage] = useState('')
 
-	
-	const [validationMessage, setValidationMessage] = useState("")
-
-	const [registerFormUserName, setRegisterUserName] = useState("")
-	const [registerFormUserPassword, setRegisterUserPassword] = useState("")
-	const [registerFormUserEmail, setRegisterUserEmail] = useState("")
-	const [registerFormUserNumber, setRegisterUserNumber] = useState("")
+	const [registerFormUserName, setRegisterUserName] = useState('')
+	const [registerFormUserPassword, setRegisterUserPassword] = useState('')
+	const [registerFormUserEmail, setRegisterUserEmail] = useState('')
+	const [registerFormUserNumber, setRegisterUserNumber] = useState('')
 
 	const [userNameValidateState, setUserNameValidateState] = useState()
 	const [userPasswordValidateState, setUserPasswordValidateState] = useState()
@@ -31,7 +29,7 @@ const SignUp = () => {
 			setUserNameValidateState()
 			return true
 		} else {
-			setValidationMessage("Nazwa użytkownika powinna zawierać od 5 do 15 znaków")
+			setValidationMessage('Nazwa użytkownika powinna zawierać od 5 do 15 znaków')
 			setUserNameValidateState(styles.invalidValue)
 			return false
 		}
@@ -45,7 +43,7 @@ const SignUp = () => {
 			setUserPasswordValidateState()
 			return true
 		} else {
-			setValidationMessage("Hasło musi zawierać od 8 do 20 znaków")
+			setValidationMessage('Hasło musi zawierać od 8 do 20 znaków')
 			setUserPasswordValidateState(styles.invalidValue)
 			return false
 		}
@@ -57,7 +55,7 @@ const SignUp = () => {
 			setUserEmailValidateState()
 			return true
 		} else {
-			setValidationMessage("Podany e-mail jest nieprawidłowy")
+			setValidationMessage('Podany e-mail jest nieprawidłowy')
 			setUserEmailValidateState(styles.invalidValue)
 			return false
 		}
@@ -69,7 +67,7 @@ const SignUp = () => {
 			setUserPhoneValidateState()
 			return true
 		} else {
-			setValidationMessage("Podany numer telefonu jest nieprawidłowy")
+			setValidationMessage('Podany numer telefonu jest nieprawidłowy')
 			setUserPhoneValidateState(styles.invalidValue)
 			return false
 		}
@@ -82,17 +80,18 @@ const SignUp = () => {
 		const isValidEmail = validateUserEmail()
 		const isValidPhoneNumber = validateUserPhone()
 
-		const validateForm = isValidName && isValidPassword && isValidEmail && isValidPhoneNumber
+		const validateForm =
+			isValidName && isValidPassword && isValidEmail && isValidPhoneNumber
 
 		if (validateForm) {
-			setValidationMessage("")
+			setValidationMessage('')
 
 			async function sendUserData() {
 				let { user } = await supabase.auth.signUp({
 					email: registerFormUserEmail,
 					password: registerFormUserPassword,
 				})
-				const { data, error } = await supabase.from("USERS").insert(
+				const { data, error } = await supabase.from('USERS').insert(
 					[
 						{
 							id: user.id,
@@ -101,7 +100,7 @@ const SignUp = () => {
 							number: registerFormUserNumber,
 						},
 					],
-					{ returning: "minimal" }
+					{ returning: 'minimal' }
 				)
 			}
 			sendUserData()

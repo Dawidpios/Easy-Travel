@@ -1,18 +1,13 @@
+export const LOG_IN = 'LOG_IN'
+export const LOG_OUT = 'LOG_OUT'
 
-export const LOG_IN = "LOG_IN";
-export const LOG_OUT = "LOG_OUT";
-
-
-
-const logIn = ({...user}) => ({
-    type:LOG_IN,
-    payload:{
-       ...user
-    }
+const logIn = ({ ...user }) => ({
+	type: LOG_IN,
+	payload: {
+		...user,
+	},
 })
 
-const logOut = () =>({
-    type:LOG_OUT,
-   
+const logOut = () => ({
+	type: LOG_OUT,
 })
-
