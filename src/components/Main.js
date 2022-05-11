@@ -12,14 +12,6 @@ import User from './User/User'
 import styles from '../styles/componentsStyle/main.module.css'
 
 const Main = () => {
-	useEffect(() => {
-		fetch(
-			'https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=55.42159&longitude=-22.0837&localityLanguage=pl'
-		)
-			.then((response) => response.json())
-			
-	}, [])
-
 	return (
 		<section className={styles.mainContainer}>
 			<Routes>
