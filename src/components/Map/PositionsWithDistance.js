@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Marker, Popup, useMapEvents } from 'react-leaflet'
 import { useDispatch } from 'react-redux'
 import { useSelector } from 'react-redux'
-import { PICK_FIRST_PLACE } from '../../redux/appActions'
+import { GET_DISTANCE, PICK_FIRST_PLACE } from '../../redux/appActions'
 
 export function PositionsWithDistance() {
 	const dispatch = useDispatch()
@@ -14,7 +14,7 @@ export function PositionsWithDistance() {
 	const map = useMapEvents({
 		click(e) {
 			const coordinate = e.latlng
-			console.log(coordinate)
+
 			if (position === null) {
 				dispatch({
 					type: PICK_FIRST_PLACE,
@@ -31,16 +31,22 @@ export function PositionsWithDistance() {
 					},
 				})
 				setSecondPosition(coordinate)
-				console.log(state)
 			}
 		},
 	})
 	useEffect(() => {
 		if (secondPosition !== null) {
-			console.log(distance)
 			setDistance(map.distance(position, secondPosition).toFixed(0) / 1000)
+			dispatch({
+				type: GET_DISTANCE,
+				payload: {
+					...state,
+					distance: distance,
+				},
+			})
 		}
-	}, [map, position, secondPosition, distance])
+		console.log(state)
+	}, [map, position, secondPosition, dispatch, distance, state])
 
 	if (position !== null) {
 		if (secondPosition !== null) {

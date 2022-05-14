@@ -18,6 +18,7 @@ const PickedPlace = ({ state }) => {
 				.then((response) => response.json())
 				.then((response) => setFirstPlace(response.data[0]))
 		}
+
 		if (isSecondPlacePicked) {
 			fetch(
 				`http://api.positionstack.com/v1/reverse?access_key=${Key}&query=${state.pickPlace.latSecond},${state.pickPlace.lngSecond}`
@@ -26,7 +27,7 @@ const PickedPlace = ({ state }) => {
 				.then((response) => setSecondPlace(response.data[0]))
 		}
 	}, [state.pickPlace])
-	console.log(firstPlace)
+
 	return (
 		<>
 			<section>
@@ -41,6 +42,7 @@ const PickedPlace = ({ state }) => {
 				<p>{secondPlace?.country}</p>
 				<p>{secondPlace?.continent}</p>
 			</section>
+			<div>{state.pickPlace.distance}</div>
 		</>
 	)
 }
