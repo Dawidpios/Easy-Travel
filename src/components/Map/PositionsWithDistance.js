@@ -18,7 +18,7 @@ export function PositionsWithDistance() {
 			if (position === null) {
 				dispatch({
 					type: PICK_FIRST_PLACE,
-					payload: { lat: coordinate.lat, lng: coordinate.lng },
+					payload: { latFirst: coordinate.lat, lngFirst: coordinate.lng },
 				})
 				setPosition(coordinate)
 			} else {
@@ -47,10 +47,12 @@ export function PositionsWithDistance() {
 			return (
 				<>
 					<Marker position={position}>
-						<Popup>Position</Popup>
+						<Popup>
+							<p>Hello</p>
+						</Popup>
 					</Marker>
 					<Marker position={secondPosition}>
-						<Popup>Second position</Popup>
+						<Popup></Popup>
 					</Marker>
 				</>
 			)

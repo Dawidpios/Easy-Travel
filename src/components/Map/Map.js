@@ -1,12 +1,5 @@
-import React, { useState, useEffect } from 'react'
-import {
-	MapContainer,
-	TileLayer,
-	useMap,
-	Marker,
-	Popup,
-	useMapEvents,
-} from 'react-leaflet'
+import React from 'react'
+import { MapContainer, TileLayer, Popup } from 'react-leaflet'
 import style from './Map.module.css'
 import { PositionsWithDistance } from './PositionsWithDistance'
 import PickedPlace from './PickedPlace'
@@ -26,9 +19,7 @@ const Map = () => {
 					url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
 				/>
 				<PositionsWithDistance>
-					<Popup>
-						A pretty CSS3 popup. <br /> Easily customizable.
-					</Popup>
+					<Popup>Hello</Popup>
 				</PositionsWithDistance>
 			</MapContainer>
 

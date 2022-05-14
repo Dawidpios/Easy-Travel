@@ -1,6 +1,6 @@
 import { PICK_FIRST_PLACE, PICK_SECOND_PLACE } from '../appActions'
 
-export const pickPlaceReducer = (state = { latFirst: 0, lngFirst: 0 }, action) => {
+export const pickPlaceReducer = (state = { latFirst: null, lngFirst: null }, action) => {
 	switch (action.type) {
 		case PICK_FIRST_PLACE:
 			return (state = action.payload)
