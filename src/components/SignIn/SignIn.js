@@ -3,7 +3,7 @@ import { supabase } from '../supaBaseClient/supaBaseClient'
 import { useDispatch } from 'react-redux'
 import { LOG_IN } from '../../redux/appActions'
 import { Link } from 'react-router-dom'
-import style from '../../styles/componentsStyle/LogIn.module.css'
+import style from './LogIn.module.css'
 
 const SignIn = () => {
 	const dispatch = useDispatch()
@@ -35,15 +35,26 @@ const SignIn = () => {
 
 	return (
 		<>
-			<form className={style.form}>
-				<label>Login:</label>
-				<input type="text" onChange={handleLogin} value={login}></input>
-				<label>Hasło</label>
-				<input type="text" onChange={handlePassword} value={password}></input>
-				<button onClick={handleLogIn}>
-					<Link to="/">Zaloguj</Link>
-				</button>
-			</form>
+			<div className={style.blur}>
+				<form className={style.form__container}>
+					<h1 className={style.form__header}>Welcome back!</h1>
+					<label className={style.form__label}>Login</label>
+					<input
+						className={style.form__input}
+						type="text"
+						onChange={handleLogin}
+						value={login}></input>
+					<label className={style.form__label}>Password</label>
+					<input
+						className={style.form__input}
+						type="password"
+						onChange={handlePassword}
+						value={password}></input>
+					<button className={style.form__button} onClick={handleLogIn}>
+						<Link to="/">Log in</Link>
+					</button>
+				</form>
+			</div>
 		</>
 	)
 }
