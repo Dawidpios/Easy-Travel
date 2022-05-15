@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-import styles from '../../styles/componentsStyle/pagesstyle/Signup.module.css'
+import styles from './Signup.module.css'
 
 import { supabase } from '../supaBaseClient/supaBaseClient'
 
@@ -110,34 +110,48 @@ const SignUp = () => {
 	}
 
 	return (
-		<form className={styles.form__container} onSubmit={(e) => handleSubmit(e)}>
-			{validationMessage && <h1>{validationMessage}</h1>}
-			<label className={styles.form__labels}>Nazwa użytkownika</label>
-			<input
-				onChange={(e) => setRegisterUserName(e.target.value)}
-				value={registerFormUserName}
-				className={`${styles.form__labels} ${userNameValidateState}`}
-				type="text"></input>
-			<label className={styles.form__labels}>Hasło</label>
-			<input
-				onChange={(e) => setRegisterUserPassword(e.target.value)}
-				value={registerFormUserPassword}
-				className={`${styles.form__labels} ${userPasswordValidateState}`}
-				type="password"></input>
-			<label className={styles.form__labels}>Adres e-mail:</label>
-			<input
-				onChange={(e) => setRegisterUserEmail(e.target.value)}
-				value={registerFormUserEmail}
-				className={`${styles.form__labels} ${userEmailValidateState}`}
-				type="email"></input>
-			<label className={styles.form__labels}>Numer telefonu:</label>
-			<input
-				onChange={(e) => setRegisterUserNumber(e.target.value)}
-				value={registerFormUserNumber}
-				className={`${styles.form__labels} ${userPhoneValidateState}`}
-				type="number"></input>
-			<button type="submit">Zarejestruj się</button>
-		</form>
+		<>
+			<div className={styles.blur}>
+				<form
+					className={styles.form__container}
+					onSubmit={(e) => handleSubmit(e)}>
+					<div className={styles.container__banner}>
+						<h1 className={styles.container__header}>Join to us!</h1>
+					</div>
+
+					{validationMessage && (
+						<h2 className={styles.validationMessage}>{validationMessage}</h2>
+					)}
+					<label className={styles.form__labels}>Nazwa użytkownika</label>
+					<input
+						onChange={(e) => setRegisterUserName(e.target.value)}
+						value={registerFormUserName}
+						className={`${styles.form__inputs} ${userNameValidateState}`}
+						type="text"></input>
+					<label className={styles.form__labels}>Hasło</label>
+					<input
+						onChange={(e) => setRegisterUserPassword(e.target.value)}
+						value={registerFormUserPassword}
+						className={`${styles.form__inputs} ${userPasswordValidateState}`}
+						type="password"></input>
+					<label className={styles.form__labels}>Adres e-mail:</label>
+					<input
+						onChange={(e) => setRegisterUserEmail(e.target.value)}
+						value={registerFormUserEmail}
+						className={`${styles.form__inputs} ${userEmailValidateState}`}
+						type="email"></input>
+					<label className={styles.form__labels}>Numer telefonu:</label>
+					<input
+						onChange={(e) => setRegisterUserNumber(e.target.value)}
+						value={registerFormUserNumber}
+						className={`${styles.form__inputs} ${userPhoneValidateState}`}
+						type="number"></input>
+					<button className={styles.form__button} type="submit">
+						Sign Up
+					</button>
+				</form>
+			</div>
+		</>
 	)
 }
 

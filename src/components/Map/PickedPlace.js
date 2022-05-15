@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import TripPlanner from './TripPlanner'
 
 const PickedPlace = ({ state }) => {
 	const [firstPlace, setFirstPlace] = useState()
@@ -31,18 +32,23 @@ const PickedPlace = ({ state }) => {
 	return (
 		<>
 			<section>
-				<h1>{firstPlace?.name}</h1>
-				<h2>{firstPlace?.administrative_area}</h2>
-				<p>{firstPlace?.country}</p>
-				<p>{secondPlace?.continent}</p>
+				<div>
+					<h1>{firstPlace?.name}</h1>
+					<h2>{firstPlace?.administrative_area}</h2>
+					<p>{firstPlace?.country}</p>
+					<p>{secondPlace?.continent}</p>
+				</div>
+				<div>
+					<h1>{secondPlace?.name}</h1>
+					<h2>{secondPlace?.administrative_area}</h2>
+					<p>{secondPlace?.country}</p>
+					<p>{secondPlace?.continent}</p>
+				</div>
 			</section>
-			<section>
-				<h1>{secondPlace?.name}</h1>
-				<h2>{secondPlace?.administrative_area}</h2>
-				<p>{secondPlace?.country}</p>
-				<p>{secondPlace?.continent}</p>
-			</section>
-			<div>{state.pickPlace.distance}</div>
+			<TripPlanner
+				firstPlace={firstPlace}
+				secondPlace={secondPlace}
+				distance={state.pickPlace.distance}></TripPlanner>
 		</>
 	)
 }

@@ -10,7 +10,9 @@ import styles from '../styles/componentsStyle/Nav.module.css'
 const NavBar = () => {
 	const [isUserLogged, setIsUserLogged] = useState()
 	const data = localStorage.getItem('user')
-	const state = useSelector((state) => (data ? JSON.parse(data).logged : state))
+	const state = useSelector((state) =>
+		data ? JSON.parse(data).logged : state.LogInOrOut
+	)
 	const dispatch = useDispatch()
 	const logOut = () => {
 		setIsUserLogged(false)

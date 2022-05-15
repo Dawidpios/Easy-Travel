@@ -6,6 +6,7 @@
     position:fixed;
     margin-bottom: 2rem;
     background-image: linear-gradient(to right bottom, hsla(220, 49%, 46%, .1), hsla(220, 49%, 46%, .1));
+    z-index: 5;
 
 }
 

@@ -1,5 +1,5 @@
 import React from 'react'
-import { MapContainer, TileLayer, Popup } from 'react-leaflet'
+import { MapContainer, TileLayer } from 'react-leaflet'
 import style from './Map.module.css'
 import { PositionsWithDistance } from './PositionsWithDistance'
 import PickedPlace from './PickedPlace'
@@ -18,9 +18,7 @@ const Map = () => {
 					attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 					url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
 				/>
-				<PositionsWithDistance>
-					<Popup>Hello</Popup>
-				</PositionsWithDistance>
+				<PositionsWithDistance></PositionsWithDistance>
 			</MapContainer>
 
 			<section>

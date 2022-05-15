@@ -36,26 +36,23 @@ export function PositionsWithDistance() {
 	})
 	useEffect(() => {
 		if (secondPosition !== null) {
-			setDistance(map.distance(position, secondPosition).toFixed(0) / 1000)
+			setDistance(map.distance(position, secondPosition) / 1000)
 			dispatch({
 				type: GET_DISTANCE,
 				payload: {
 					...state,
-					distance: distance,
+					distance: distance?.toFixed(2),
 				},
 			})
 		}
-		console.log(state)
-	}, [map, position, secondPosition, dispatch, distance, state])
+	}, [position, secondPosition, distance])
 
 	if (position !== null) {
 		if (secondPosition !== null) {
 			return (
 				<>
 					<Marker position={position}>
-						<Popup>
-							<p>Hello</p>
-						</Popup>
+						<Popup>hello</Popup>
 					</Marker>
 					<Marker position={secondPosition}>
 						<Popup></Popup>
@@ -65,7 +62,7 @@ export function PositionsWithDistance() {
 		} else {
 			return (
 				<Marker position={position}>
-					<Popup>Position</Popup>
+					<Popup>heeelo</Popup>
 				</Marker>
 			)
 		}
